@@ -14,6 +14,18 @@ def main():
     st.title("Taglish Sentiment Analyzer")
     st.write("This app evaluates the sentiment of a Taglish (Tagalog-English) phrase or sentence.")
 
+    # Display model definition information
+    st.subheader("About the Model")
+    st.write("""
+        The model used in this app is **BERT-based Multilingual Sentiment Model** (`nlptown/bert-base-multilingual-uncased-sentiment`).
+        This model is a variant of BERT (Bidirectional Encoder Representations from Transformers) that has been trained to perform sentiment analysis.
+        It can process text in multiple languages, including Taglish (a combination of Tagalog and English).
+        The original model classifies sentiment into five categories based on a scale from 1 to 5 stars (from very negative to very positive).
+
+        The revised model classifies sentiment only into three categories for ease of subjectiveness (positive, neutral, negative).
+        Also, confidence score is adjusted for better granularity
+    """)
+
     st.info("""
         **Sentiment Categories:**
         - Positive: Indicates praise, relief, or admiration.
