@@ -5,6 +5,24 @@ def main():
     st.title("Taglish Sentiment Analyzer")
     st.write("This app evaluates the sentiment of a Taglish (Tagalog-English) phrase or sentence.")
 
+    # Define sentiment values and their meanings
+    sentiment_info = {
+        "1 star": "Very negative sentiment",
+        "2 stars": "Negative sentiment",
+        "3 stars": "Neutral sentiment",
+        "4 stars": "Positive sentiment",
+        "5 stars": "Very positive sentiment"
+    }
+
+    st.info("""
+        **Sentiment Values:**
+        - 1 Star: Very Negative
+        - 2 Stars: Negative
+        - 3 Stars: Neutral
+        - 4 Stars: Positive
+        - 5 Stars: Very Positive
+    """)
+
     # Input text
     user_input = st.text_area("Enter a Taglish sentence:", "")
 
@@ -17,11 +35,13 @@ def main():
                 # Analyze sentiment
                 result = sentiment_analyzer(user_input)
 
-                # Display result
+                # Extract result details
                 sentiment = result[0]['label']
-                score = result[0]['score']
-                st.success(f"Sentiment: {sentiment}")
-                st.info(f"Confidence Score: {score:.2f}")
+                score = result[0]['score'] * 100  # Convert to percentage
+                sentiment_description = sentiment_info.get(sentiment, "Unknown sentiment")
+
+                # Display result
+                st.success(f"The sentiment for the given Taglish phrase/sentence is **{sentiment_description}** with a confidence level of **{score:.2f}%**.")
             except Exception as e:
                 st.error(f"An error occurred: {e}")
         else:
