@@ -6,7 +6,7 @@ This is a Taglish Sentiment Analyzer built using the transformers library and St
 3. Displays the confidence level as a percentage
 4. Simplified and user-friendly interface using streamlit
 # How to use?
-Access the app through this link: taglish-sentiment-analysis-0909.streamlit.app
+Access the app by clicking [here](taglish-sentiment-analysis-0909.streamlit.app).
 
 Upon accessing, you can see the model information and how was the model revised to determine necessary outputs.
 
