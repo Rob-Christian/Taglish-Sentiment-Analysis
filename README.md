@@ -9,11 +9,15 @@ This is a Taglish Sentiment Analyzer built using the transformers library and St
 Access the app by clicking [here](https://taglish-sentiment-analysis-0909.streamlit.app).
 
 Upon accessing, you can see the model information and how was the model revised to determine necessary outputs.
+--------------------------------------------------------------------------------------------------------------
 
 ![image](1.png)
 
+--------------------------------------------------------------------------------------------------------------
 You can now type your taglish sentence or phrase.
+--------------------------------------------------------------------------------------------------------------
 
 ![image](2.png)
 
+--------------------------------------------------------------------------------------------------------------
 Lastly, you can press the "Analyze Sentiment" button to determine the results.
