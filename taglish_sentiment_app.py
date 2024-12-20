@@ -2,7 +2,7 @@ import streamlit as st
 from transformers import pipeline
 
 def classify_sentiment(label):
-    """Map the model's label to positive, neutral, or negative."""
+    # Convert the inital 5-output version of mBERT to 3-output version
     if label in ["4 stars", "5 stars"]:
         return "Positive"
     elif label == "3 stars":
@@ -14,10 +14,10 @@ def main():
     st.title("Taglish Sentiment Analyzer")
     st.write("This app evaluates the sentiment of a Taglish (Tagalog-English) phrase or sentence.")
 
-    # Display model definition information
+    # Display the information about the model
     st.subheader("About the Model")
     st.write("""
-        The model used in this app is **BERT-based Multilingual Sentiment Model** (`nlptown/bert-base-multilingual-uncased-sentiment`).
+        The model used in this app is **BERT-based Multilingual Sentiment Model**.
         This model is a variant of BERT (Bidirectional Encoder Representations from Transformers) that has been trained to perform sentiment analysis.
         It can process text in multiple languages, including Taglish (a combination of Tagalog and English).
         The original model classifies sentiment into five categories based on a scale from 1 to 5 stars (from very negative to very positive).
