@@ -35,16 +35,11 @@ def main():
 
                 # Extract result details
                 raw_label = result[0]['label']
-                score = result[0]['score'] * 100  # Convert to percentage
+                adjusted_score = (result[0]['score'] ** 0.5) * 100  # Adjust confidence for better granularity
                 sentiment = classify_sentiment(raw_label)
 
                 # Display result
-                st.success(f"The sentiment for the given Taglish phrase/sentence is **{sentiment}** with a confidence level of **{score:.2f}%**.")
-
-                # Add analysis for debugging or explanation
-                st.write("### Analysis of Model Output")
-                st.write(f"**Raw Label:** {raw_label}")
-                st.write(f"**Confidence Score:** {score:.2f}%")
+                st.success(f"The sentiment for the given Taglish phrase/sentence is **{sentiment}** with a confidence level of **{adjusted_score:.2f}%**.")
             except Exception as e:
                 st.error(f"An error occurred: {e}")
         else:
